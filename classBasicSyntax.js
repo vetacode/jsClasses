@@ -145,3 +145,26 @@ new Guru().sayHi(); // Hello
   user = new User('Aani');
   console.log(user.name);
 }
+
+//COMPUTED NAMES
+{
+  class User {
+    ['say' + 'Hi']() {
+      console.log('Hello');
+    }
+  }
+
+  new User().sayHi();
+}
+
+//CLASS FIELD: adding property to the obj
+//ONLY SET TO INDIVIDUAL OBJECT , NOT IN THE User.prototype
+{
+  class User {
+    name = 'John';
+  }
+
+  let user = new User();
+  console.log(user.name); // John
+  console.log(User.prototype.name); // undefined
+}
