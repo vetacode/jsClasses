@@ -79,3 +79,31 @@ console.log(obj instanceof Animal); // true: Animal[Symbol.hasInstance](obj) is 
   console.log({}.toString.call(window)); // [object Window]
   console.log({}.toString.call(new XMLHttpRequest())); // [object XMLHttpRequest]
 }
+
+/**TASK
+ * Strange instanceof
+importance: 5
+In the code below, why does instanceof return true? We can easily see that a is not created by B().
+
+function A() {}
+function B() {}
+
+A.prototype = B.prototype = {};
+
+let a = new A();
+
+alert( a instanceof B ); // true
+ */
+
+function A() {}
+function B() {}
+
+A.prototype = B.prototype = {};
+
+let a = new A();
+
+console.log(a instanceof B); // true
+
+// because
+console.log(a.__proto__ === B.prototype);
+console.log(A.prototype === B.prototype);
