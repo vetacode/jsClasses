@@ -63,3 +63,19 @@ console.log(obj instanceof Animal); // true: Animal[Symbol.hasInstance](obj) is 
   console.log(s.call(null)); // [object Null]
   console.log(s.call(alert)); // [object Function]
 }
+
+{
+  //Symbol.toStringTag
+  let user = {
+    [Symbol.toStringTag]: 'User',
+  };
+
+  console.log({}.toString.call(user)); // [object User]
+
+  // toStringTag for the environment-specific object and class:
+  console.log(window[Symbol.toStringTag]); // Window
+  console.log(XMLHttpRequest.prototype[Symbol.toStringTag]); // XMLHttpRequest
+
+  console.log({}.toString.call(window)); // [object Window]
+  console.log({}.toString.call(new XMLHttpRequest())); // [object XMLHttpRequest]
+}
