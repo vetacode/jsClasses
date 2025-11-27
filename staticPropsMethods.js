@@ -1,4 +1,15 @@
 //Static properties and methods
+//SYNTAX:
+/**
+ * class MyClass {
+  static property = ...;
+
+  static method() {
+    ...
+  }
+}
+ */
+
 class User {
   static staticMethod() {
     console.log(this === User);
