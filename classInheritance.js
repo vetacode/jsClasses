@@ -80,4 +80,14 @@
   rabbit.stop();
   rabbit.run(10);
   rabbit.hide();
+
+  //Arrow functions have no super => berguna untuk buat setTimeout pake arrow tp msh bs akses super parent
+
+  class Cat extends Animal {
+    stop() {
+      console.log(setTimeout(() => super.stop(), 1000)); //super msh bisa akses stop() dari parent (Animal)
+    }
+  }
+  let cat = new Cat('Belang');
+  cat.stop(); //Belang stands still!
 }
