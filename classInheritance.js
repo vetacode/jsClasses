@@ -82,7 +82,6 @@
   rabbit.hide();
 
   //Arrow functions have no super => berguna untuk buat setTimeout pake arrow tp msh bs akses super parent
-
   class Cat extends Animal {
     stop() {
       console.log(setTimeout(() => super.stop(), 1000)); //super msh bisa akses stop() dari parent (Animal)
@@ -90,4 +89,43 @@
   }
   let cat = new Cat('Belang');
   cat.stop(); //Belang stands still!
+}
+
+{
+  //OVERRIDING CONSTRUCTOR
+  // super(...) to call a parent constructor (inside our constructor only).
+  class Animal {
+    constructor(name) {
+      this.name = name;
+      this.speed = 0;
+    }
+
+    run(speed) {
+      this.speed = speed;
+      console.log(`${this.name} runs with speed ${this.speed} km/h`);
+    }
+
+    stop() {
+      this.speed = 0;
+      console.log(`${this.name} stands still!`);
+    }
+  }
+
+  class Rabbit extends Animal {
+    constructor(name, earLength) {
+      super(name);
+      this.earLength = earLength;
+      console.log(`${this.name} has ear length ${earLength} cm`);
+    }
+
+    hide() {
+      console.log(`${this.name} hides!!`);
+    }
+  }
+
+  let rabbit = new Rabbit('White Rabbit', 15);
+  console.log(rabbit.name);
+  console.log(rabbit.earLength);
+  rabbit.run(30);
+  rabbit.hide();
 }
