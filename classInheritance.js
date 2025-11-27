@@ -30,4 +30,16 @@
 
   rabbit.run(30);
   rabbit.hide();
+
+  //CREATE class wrapping function
+  function f(say) {
+    return class {
+      sayHi() {
+        console.log(say);
+      }
+    };
+  }
+
+  class User extends f('Hello') {}
+  new User().sayHi(); //Hello
 }
