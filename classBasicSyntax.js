@@ -4,7 +4,7 @@
 //syntax
 //NOTE: No comma between class methods: to distinguish with object literals
 /**
- * cclass MyClass {
+ * class MyClass {
   prop = value; // property
 
   constructor(...) { // constructor
@@ -212,3 +212,11 @@ new Guru().sayHi(); // Hello
   console.log(button.click());
   setTimeout(button.click, 1000); //hello
 }
+
+/**TASK 1
+ * Rewrite to class
+importance: 5
+The Clock class (see the sandbox) is written in functional style. Rewrite it in the “class” syntax.
+
+P.S. The clock ticks in the console, open it to see.
+ */
