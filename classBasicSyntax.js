@@ -74,7 +74,7 @@ class User3 {
 const user3 = new User3('Veta');
 console.log(user3.constructor === User3); // true
 console.log(user3.jeneng); //Veta
-console.log(user3.sayHi('mau makan')); //Veta
+console.log(user3.sayHi('mau makan')); //'Veta mau makan'
 
 //CREATING CLASS WITH PURE FUNCTION
 // rewriting class User in pure functions
